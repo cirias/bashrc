@@ -14,3 +14,13 @@ export GIT_PS1_SHOWCOLORHINTS=1
 #PS1='\W$(__git_ps1 " (%s)") '
 #PS1='\W$(__git_ps1 " \e[38;5;76m(%s)\e[0m") '
 PROMPT_COMMAND='__git_ps1 "\W" " " " %s"'
+#PS1='\W '
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+HISTSIZE=5000
+HISTFILESIZE=10000
+shopt -s histappend
+PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+CDPATH=CDPATH:~/github.com
