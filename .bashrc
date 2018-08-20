@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-source ~/.git-prompt.sh
+[ -f ~/.git-prompt.sh ] && source ~/.git-prompt.sh
 
 alias ls='ls --color=auto'
 
@@ -24,3 +24,12 @@ shopt -s histappend
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 CDPATH=CDPATH:~/github.com
+export PATH=$HOME/.local/bin:$PATH
+
+export VISUAL=nvim
+export EDITOR=$VISUAL
+
+[ -f ~/.ssi.bash ] && source ~/.ssi.bash
+source /usr/share/nvm/init-nvm.sh
+
+# eval `dircolors $HOME/.dir_colors/dircolors`
