@@ -5,15 +5,19 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWCOLORHINTS=1
+GIT_PS1_SHOWUPSTREAM="auto"
 [ -f ~/.git-prompt.sh ] && source ~/.git-prompt.sh
 
 alias ls='ls --color=auto'
 
-export GIT_PS1_SHOWDIRTYSTATE=1
-export GIT_PS1_SHOWCOLORHINTS=1
 #PS1='\W$(__git_ps1 " (%s)") '
 #PS1='\W$(__git_ps1 " \e[38;5;76m(%s)\e[0m") '
-PROMPT_COMMAND='__git_ps1 "\W" " " " %s"'
+: definitions,
+PS1="\[\033]0;\W\007\]\W"
+PROMPT_COMMAND="__git_ps1 \"$PS1\" \" \" \" %s\""
+# PROMPT_COMMAND='__git_ps1 "\W" " " " %s"'
 #PS1='\W '
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
