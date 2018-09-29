@@ -26,3 +26,5 @@ export PATH=$PATH:~/.cabal/bin/
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:/opt/node/bin
 
+# tig
+export TIG_DIFF_OPTS="--histogram"
