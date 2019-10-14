@@ -17,7 +17,8 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
-ibus-daemon -drx
+# launched with sway/i3 config
+# ibus-daemon -drx
 
 # haskell
 export PATH=$PATH:~/.cabal/bin/
@@ -28,3 +29,13 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:/opt/node/bin
 
 # tig
 export TIG_DIFF_OPTS="--histogram"
+
+# wayland
+export MOZ_ENABLE_WAYLAND=1
+export _JAVA_AWT_WM_NONREPARENTING=1 # arduino
+
+# esp32
+export IDF_PATH=$HOME/github.com/espressif/esp-idf
+
+# export the PATH to systemd unit, such as emacs daemon
+systemctl --user import-environment PATH
